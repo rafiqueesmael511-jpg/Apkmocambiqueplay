@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Moçambique Play</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#080d12;color:#fff;font-family:Arial,sans-serif}.app{max-width:480px;margin:auto;min-height:100vh;background:#101822}
+header{height:70px;background:#0b1118;display:flex;align-items:center;justify-content:space-between;padding:0 16px;border-bottom:1px solid #263442}.logo{font-size:21px;font-weight:900}.logo span{color:#f0c548}.menu{font-size:24px;background:#192431;border-radius:12px;padding:8px 12px}
+.hero{margin:15px;border-radius:20px;overflow:hidden;background:radial-gradient(circle at 80% 15%,#b78b24,transparent 22%),linear-gradient(135deg,#063522,#075c35 52%,#08251d);border:1px solid #52683d}.flag{height:9px;display:flex}.flag i{flex:1}.g{background:#079447}.y{background:#f1ca27}.r{background:#d92d35}.content{padding:24px 20px}.wa{display:inline-block;background:#19b957;padding:10px 14px;border-radius:25px;font-weight:800}.title{text-align:center;margin-top:23px}.title h1{margin:0;color:#f4ce5f;font-size:37px;text-shadow:2px 3px #53360e}.title h2{margin:8px 0;font-size:23px}.ticket{width:220px;margin:20px auto;text-align:center;padding:12px;border-radius:50px;background:linear-gradient(#ffe58b,#b67717);color:#18200e;border:3px solid #f4df91;font-weight:900}.ticket b{display:block;font-size:27px}.feature{padding:12px 0;border-bottom:1px solid #d4b34866;font-size:19px;font-weight:800}.valid{margin:18px auto;width:max-content;padding:10px 16px;border-radius:8px;background:linear-gradient(#f7dc7b,#a96e12);color:#171710;font-weight:900}.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}button{border:0;border-radius:12px;padding:14px;font-weight:900;font-size:15px}.watch{background:#1287f4;color:white}.login{background:#f1c64c;color:#111}.section{padding:5px 15px 30px}.cards{display:grid;grid-template-columns:1fr 1fr;gap:11px}.card{background:#192431;border:1px solid #304050;border-radius:15px;padding:17px 8px;text-align:center}.card div{font-size:34px}.card p{font-weight:800}nav{position:sticky;bottom:0;background:#0b1118;border-top:1px solid #2a3745;display:flex;justify-content:space-around;padding:10px 2px}nav div{text-align:center;color:#9da9b8;font-size:11px}nav b{display:block;font-size:22px}.active{color:#fff!important}
+.modal{display:none;position:fixed;inset:0;background:#000d;z-index:20;align-items:center;justify-content:center;padding:14px}.box{width:100%;max-width:450px;background:#151f2b;border:1px solid #405163;border-radius:18px;padding:16px}.box h2{margin:5px 0 13px}.player{width:100%;background:#000;border-radius:12px;overflow:hidden}.player video{width:100%;display:block}.close{width:100%;margin-top:9px;background:#3b4a59;color:#fff}
+</style>
+</head>
+<body>
+<div class="app">
+<header><div class="logo">🇲🇿 MOÇAMBIQUE <span>PLAY</span></div><div class="menu">☰</div></header>
+<section class="hero"><div class="flag"><i class="g"></i><i class="y"></i><i class="r"></i></div>
+<div class="content">
+<div class="wa">🟢 WhatsApp &nbsp; 845507155</div>
+<div class="title"><h1>BILHETE VIP</h1><h2>🇲🇿 MOÇAMBIQUE PLAY</h2></div>
+<div class="ticket">VIP ACCESS<b>100 MT/MÊS</b><small>100 METICAIS POR MÊS</small></div>
+<div class="feature">⚽ Futebol ao vivo</div><div class="feature">🎬 Filmes &amp; Novelas</div><div class="feature">📺 Conteúdo de Entretenimento</div>
+<div class="valid">📅 VÁLIDO 30 DIAS</div>
+<div class="actions"><button class="watch" onclick="openPlayer()">▶ ASSISTIR</button><button class="login" onclick="alert('Área de entrada')">🔐 ENTRAR</button></div>
+</div></section>
+<section class="section"><h2>Conteúdos</h2><div class="cards">
+<div class="card" onclick="openPlayer()"><div>⚽</div><p>Futebol ao vivo</p></div>
+<div class="card" onclick="openPlayer()"><div>🎬</div><p>Filmes &amp; Novelas</p></div>
+<div class="card"><div>📺</div><p>Entretenimento</p></div>
+<div class="card"><div>🎵</div><p>Música</p></div></div></section>
+<nav><div class="active"><b>⌂</b>Início</div><div onclick="openPlayer()"><b>⚽</b>Futebol</div><div><b>🎬</b>Filmes</div><div><b>👤</b>Conta</div></nav>
+</div>
+
+<div class="modal" id="playerModal">
+<div class="box">
+<h2>▶ Moçambique Play — Vídeo</h2>
+<div class="player">
+<video id="video" controls autoplay playsinline>
+<source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+O seu navegador não suporta vídeo.
+</video>
+</div>
+<p style="color:#b7c1cc;font-size:13px">Vídeo de demonstração. O vídeo de futebol ao vivo será colocado depois com uma transmissão autorizada.</p>
+<button class="close" onclick="closePlayer()">FECHAR</button>
+</div></div>
+
+<script>
+function openPlayer(){document.getElementById('playerModal').style.display='flex';document.getElementById('video').play().catch(()=>{})}
+function closePlayer(){let v=document.getElementById('video');v.pause();document.getElementById('playerModal').style.display='none'}
+</script>
+</body>
+</html>
